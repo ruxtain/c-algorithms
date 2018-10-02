@@ -31,18 +31,30 @@ void insert(node** root, node* child) {
 
 
 // 先序遍历
-// [ visit, left, right ] 
-void pre(node * n){
-    printf("%d ", n->value);
-    if(n->left) pre(n->left);
-    if(n->right) pre(n->right);
+void pre(node * node){
+    if (node) {
+        printf("%d ", node -> value);
+        pre(node -> left);
+        pre(node -> right);  
+    }
 }
 
 // 后序遍历
-void post(node * n){
-    printf("%d ", n->value);
-    if(n->right) pre(n->right);
-    if(n->left) pre(n->left);
+void post(node * node){
+    if (node) {
+        post(node -> left);
+        post(node -> right);
+        printf("%d ", node -> value);
+    }
+}
+
+// 中序遍历
+void in(node* node) {
+    if (node) {
+        in(node->left);
+        printf("%d ", node->value);
+        in(node->right);   
+    }
 }
 
 int main() {
@@ -68,6 +80,8 @@ int main() {
     }
     pre(root);
     printf("\n");
+    (root);
+    printf("\n");    
     post(root);
     printf("\n");
     return 0;
