@@ -80,7 +80,7 @@ int main() {
     }
     pre(root);
     printf("\n");
-    (root);
+    in(root);
     printf("\n");    
     post(root);
     printf("\n");
